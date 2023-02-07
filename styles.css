@@ -75,7 +75,7 @@ select {
 
 
 
-
+/* Global styles */
 body {
     height: 100vh;
     display: flex;
@@ -84,6 +84,8 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Styles */
 
 .container {
     display: flex;
@@ -94,13 +96,51 @@ body {
 .panel {
     background-color: #333;
     margin: 0 0.5rem;
+    padding: 0 0.5rem;
    width: 3rem;
    border-radius: 10px;
    transition: width 0.5s ease-in;
    cursor: pointer;
+   color: #fff;
+   display: flex;
+   justify-content: center;
+}
+
+.panel-container {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  flex-direction: column;
+}
+
+.panel .panel-container {
+    opacity: 0;
+    overflow: hidden;
+    
 }
 
 .panel.active {
     width: 30rem;
 }
 
+.panel.active .panel-container {
+opacity: 1;
+transition: opacity 1.4s ease-in;
+}
+
+.panel-container .panel-user-description {
+  margin: 0.5rem 1rem;
+  text-align: justify;
+}
+
+.panel-container .panel-img {
+  width: 12rem;
+}
+
+.panel-container .panel-img img {
+  border-radius: 50%;
+}
+
+.panel-container .panel-user-name {
+  margin: 0.5rem 0 0 0;
+}
